@@ -8,7 +8,7 @@
     public record CreateProductResult(Guid Id);
 
     // 创建产品命令的处理程序，实现了 ICommandHandler 接口，处理 CreateProductCommand 并返回 CreateProductResult。
-    internal class CreateProductComandHandler(IDocumentSession session) : ICommandHandler<CreateProductCommand, CreateProductResult>
+    internal class CreateProductCommandHandler(IDocumentSession session) : ICommandHandler<CreateProductCommand, CreateProductResult>
     {
         // 实现 Handle 方法，处理创建产品的业务逻辑。
         public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)

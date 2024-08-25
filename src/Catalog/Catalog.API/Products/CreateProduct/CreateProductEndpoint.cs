@@ -15,7 +15,7 @@
                 // 将 MediatR 返回的结果转换为 CreateProductResponse 对象
                 var response = result.Adapt<CreateProductResponse>();
                 // 返回 HTTP 201 Created 状态码，并包含创建的产品信息
-                return Results.Created($"/products/{response.Id}", response);
+                return Results.Created($"/products/{response.Id}", response); 
             })
             .WithName("CreateProduct") // 为路由命名，方便后续引用和管理
             .Produces<CreateProductResponse>(StatusCodes.Status201Created) // 指定成功创建产品时返回的响应类型和状态码
